@@ -13,6 +13,7 @@
       src="https://kit.fontawesome.com/0b530e2e25.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather app</title>
   </head>
@@ -34,13 +35,13 @@
             </form>
           </span>
         </div>
-        <h1>Manchester</h1>
+        <h1 id="location-heading">Manchester</h1>
         <div class="row">
           <div class="col">
             <ul>
               <li id="current-time"></li>
-              <li>Clear</li>
-              <li>Humidity: 82%</li>
+              <li id="current-description">Clear</li>
+              <li>Humidity: <span id="humidity">82</span>%</li>
             </ul>
           </div>
           <div class="col">
@@ -50,7 +51,7 @@
               </div>
               <div>
                 <span id="current-temperature"> 17</span
-                ><span class="units"> °C</span>
+                ><span class="units"> °C | °F</span>
               </div>
             </div>
           </div>
