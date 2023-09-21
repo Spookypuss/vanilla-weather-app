@@ -7,6 +7,10 @@ h1 {
   font-size: 24px;
 }
 
+small {
+  font-family: monospace;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -19,6 +23,11 @@ ul {
 
 .current-weather {
   justify-content: right; /*justifies within flexbox*/
+}
+
+.daily {
+  margin-top: 10px;
+  text-align: center;
 }
 
 .sun-icon {
