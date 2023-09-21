@@ -3,22 +3,6 @@ let now = new Date();
 let date = now.getDate();
 let hours = String(now.getHours()).padStart(2, 0);
 let minutes = String(now.getMinutes()).padStart(2, 0);
-let year = now.getFullYear();
-let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
 
 let days = [
   "Sunday",
@@ -34,6 +18,30 @@ let day = days[now.getDay()];
 let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = `${day}, ${hours}:${minutes}`;
 
+// update day and time to display last update time
+
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = String(date.getHours()).padStart(2, 0);
+  let minutes = String(date.getMinutes()).padStart(2, 0);
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  //let currentTime = document.querySelector("#current-time");
+  //currentTime.innerHTML = `${day}, ${hours}:${minutes}`;
+
+  return `${day}, ${hours}:${minutes}`;
+}
+
 // hooking in to api
 function displayCurrent(response) {
   //displays current weather passed from searchCity, below
@@ -46,8 +54,10 @@ function displayCurrent(response) {
   description.innerHTML = response.data.weather[0].main; // gets text description of current weather and displays on page - can maybe try description instead of main for fuller desc?
   let humidity = document.querySelector("#humidity"); //
   humidity.innerHTML = response.data.main.humidity; // gets humidity data and displays on page
+  currentTime.innerHTML = formatDate(response.data.dt * 1000); //Need to comnvert dt from response into milliseconds for JS, hence *1000
 }
 
+// Search bar functionality
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input-text");
