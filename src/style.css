@@ -13,8 +13,22 @@ ul {
   padding: 0;
 }
 
+.current-icon {
+  padding-right: 15px;
+}
+
+.current-weather {
+  justify-content: right; /*justifies within flexbox*/
+}
+
 .sun-icon {
   color: orange;
+}
+
+.units {
+  font-size: 16px;
+  position: relative;
+  top: -32px;
 }
 
 .weather-frame {
@@ -23,4 +37,13 @@ ul {
   margin: 30px auto;
   max-width: 600px;
   padding: 20px;
+}
+
+.current-icon {
+  font-size: 64px;
+}
+
+#current-temperature {
+  font-size: 64px;
+  font-weight: 300;
 }
