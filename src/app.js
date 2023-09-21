@@ -55,6 +55,12 @@ function displayCurrent(response) {
   let humidity = document.querySelector("#humidity"); //
   humidity.innerHTML = response.data.main.humidity; // gets humidity data and displays on page
   currentTime.innerHTML = formatDate(response.data.dt * 1000); //Need to comnvert dt from response into milliseconds for JS, hence *1000
+  let currentIcon = document.querySelector(".current-icon");
+  currentIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  currentIcon.setAttribute("alt", response.data.weather[0].main);
 }
 
 // Search bar functionality
