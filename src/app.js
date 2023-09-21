@@ -35,3 +35,20 @@ let day = days[now.getDay()];
 
 let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = `${day}, ${hours}:${minutes}`;
+
+function searchLocation(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input-text"); // assign variable to input search text
+  let heading = document.querySelector("h1");
+  console.log(searchInput.value);
+
+  if (searchInput.value) {
+    heading.innerHTML = searchInput.value;
+  } else {
+    alert("Please enter a location");
+    heading.innerHTML = null;
+  }
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchLocation);
