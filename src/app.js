@@ -42,7 +42,7 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
-// hooking in to api
+// hooking in to api for current weather data
 function displayCurrent(response) {
   //displays current weather passed from searchCity, below
   let location = document.querySelector("#location-heading");
@@ -73,7 +73,6 @@ function searchCity(event) {
   cityName = cityName.trim();
   cityName = cityName.toLowerCase();
 
-  let apiKey = "28966f9a5b2543fb60e8a809ec2c1fd9";
   let endpoint = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
   axios.get(endpoint).then(displayCurrent);
@@ -81,6 +80,23 @@ function searchCity(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
+
+// 5 day forecast API call
+function displayForecast(response) {
+  console.log(response);
+}
+
+function getForecast(event) {
+  //event.preventDefault();
+  //let endpoint = `api.openweathermap.org/data/2.5/forecast/daily?id=${cityName}&cnt=5&appid=${apiKey}`;
+  //axios.get(endpoint).then(displayForecast);
+
+  console.log(cityName); // cityName not defined by this point!?
+}
+
+let apiKey = "28966f9a5b2543fb60e8a809ec2c1fd9";
+let forecastButton = document.querySelector("#forecast");
+forecastButton.addEventListener("click", getForecast);
 
 //convert temp to fahrenheit
 function displayFahrenheit(event) {
