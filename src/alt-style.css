@@ -42,6 +42,11 @@ li:first-letter {
   text-align: center;
 }
 
+.daily-icon {
+  height: 50px;
+  width: 50px;
+}
+
 .dark-mode {
   justify-content: right;
 }
