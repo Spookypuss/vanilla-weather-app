@@ -18,11 +18,6 @@ hr {
   background-color: #22252e;
 }
 
-small {
-  font-family: monospace;
-  margin: 0 auto; /* why won't this center?!*/
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -60,6 +55,12 @@ li:first-letter {
   color: #22252e;
 }
 
+.info {
+  font-family: monospace;
+  display: block;
+  text-align: center;
+}
+
 .nighttime {
   color: #716ec6;
 }
@@ -84,7 +85,7 @@ li:first-letter {
   background: #fff;
   border: 2px solid #22252e;
   /*border-radius: 5px;*/
-  margin: 30px auto;
+  margin: 30px auto 10px;
   max-width: 600px;
   padding: 20px;
 }
@@ -119,6 +120,7 @@ li:first-letter {
   border-radius: 0;
   max-width: 600px;
   outline-color: #716ec6;
+  width: 85%;
 }
 
 #search-submission {
