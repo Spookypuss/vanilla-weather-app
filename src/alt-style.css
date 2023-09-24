@@ -1,0 +1,131 @@
+/* Bootstrap overwriting*/
+a {
+  color: #716ec6;
+  text-decoration: none;
+}
+
+body {
+  color: #22252e;
+  background: #fdf8ec;
+  /*#716ec6;*/
+}
+
+h1 {
+  font-size: 24px;
+}
+
+hr {
+  background-color: #22252e;
+}
+
+small {
+  font-family: monospace;
+  margin: 0 auto; /* why won't this center?!*/
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.current-icon {
+  font-size: 64px;
+}
+
+.d-flex {
+  justify-content: right; /*justifies within flexbox*/
+  align-items: flex-start; /*Does this do anything??*/
+}
+
+.daily {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.dark-mode {
+  justify-content: right;
+}
+
+.daytime {
+  color: #ff5f36;
+  font-weight: 700;
+}
+
+.form-switch {
+  color: #22252e;
+}
+
+.nighttime {
+  color: #716ec6;
+}
+
+.search-submission {
+  background: #ff5f36;
+  box-shadow: 0 30px 50px #22252e;
+  color: #22252e;
+}
+
+.top-bar {
+  padding-bottom: 10px;
+}
+
+.units {
+  font-size: 16px;
+  position: relative;
+  top: -32px;
+}
+
+.weather-frame {
+  background: #fff;
+  border: 2px solid #22252e;
+  /*border-radius: 5px;*/
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.units .active {
+  /* hides active unit link */
+  color: #22252e;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+
+#current-temperature {
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 100px;
+}
+
+#current-description {
+  font-weight: 600;
+  color: #ff5f36;
+}
+
+#location-heading {
+  margin-top: 20px;
+}
+
+#search-input-text {
+  border: 2px solid #22252e;
+  border-radius: 0;
+  max-width: 600px;
+  outline-color: #716ec6;
+}
+
+#search-submission {
+  border: 2px solid #22252e;
+  border-radius: 0;
+  background: #ff5f36;
+  box-shadow: 5px 5px 0 #22252e;
+  color: #22252e;
+  font-weight: 600;
+}

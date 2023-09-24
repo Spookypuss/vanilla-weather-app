@@ -47,7 +47,8 @@ function displayCurrent(response) {
   //displays current weather passed from searchCity, below
   let location = document.querySelector("#location-heading");
   location.innerHTML = response.data.name; // sets name of location
-  let temperature = Math.round(response.data.main.temp); // gets current temperature and rounds to integer
+  celciusTemperature = response.data.main.temp;
+  let temperature = Math.round(celciusTemperature); // gets current temperature and rounds to integer
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = temperature; // displays current temp on page
   let description = document.querySelector("#current-description");
@@ -80,3 +81,29 @@ function searchCity(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
+
+//convert temp to fahrenheit
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+let celciusTemperature = null; //sets to null - updated to response data in displayCurrent function above
+
+let fahrenheitLink = document.querySelector("#to-fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+//switch back to celcius
+function displayCelcius() {
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = Math.round(celciusTemperature);
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celciusLink = document.querySelector("#to-celcius");
+celciusLink.addEventListener("click", displayCelcius);
